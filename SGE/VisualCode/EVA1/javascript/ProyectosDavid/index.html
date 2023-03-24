@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Proyecto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="index.css" type="Text/Css" rel="stylesheet"/>
+</head>
+<body>
+    <div id="contenedor">
+        <div id="encabezado">
+            <div class="input-group mb-3">
+                <span class="input-group-text">$</span>
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="Ename" placeholder="name">
+                  <label for="floatingInputGroup1">Name</label>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text">@</span>
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="Esalary" placeholder="salary">
+                  <label for="floatingInputGroup1">Salary</label>
+                </div>
+            </div>
+            <button id="Eadd" type="button" class="btn btn-outline-success">ADD</button>
+            <button id="EEdit" type="button" class="btn btn-outline-primary">EDIT</button>
+            <button id="EDel" type="button" class="btn btn-outline-danger">DEL</button>
+            <button id="EShowby" type="button" class="btn btn-outline-info">SHOW BY</button>
+            <button id="EShowall" type="button" class="btn btn-outline-info">SHOW ALL</button>
+
+            
+        </div>
+        <div id="tabla">
+            <br>
+            <table id="tablaG" class="table table-dark table-striped">
+                <tr id="cabeTable">
+                    <td>ID</td>
+                    <td>NAME</td>
+                    <td>SALARY</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script>
+        //Iniciar variables relevantes
+        let tabla = document.getElementById('tablaG');
+        let urlFetch = 'https://nodejs-mysql-restapi-production-d8bd.up.railway.app/api/employees';
+        let validado=true;
+        let Sname,Ssalary;
+
+        //Iniciar botones y sus metodos
+        const cors ='https://cors-anywhere.herokuapp.com/';
+        document.getElementById('Eadd').addEventListener("click",addProduction,false);
+        document.getElementById('EShowall').addEventListener("click",showAll,false);
+        document.getElementById('EShowby').addEventListener('click',showBy,false);
+        document.getElementById('EDel').addEventListener('click',eDel,false);
+        document.getElementById('EEdit').addEventListener('click',eDit,false);
+        
+
+        
+
+
+        //Metodo que modificar un empleado
+        function eDit() {
+            //var objeto
+            let button='<button id="EShowall" type="button" class="btn btn-outline-info">INFO</button>';
+            validado=true;
+            Sname = document.getElementById('Ename').value;
+            Ssalary = document.getElementById('Esalary').value;
+            
+            //Valida el id introducido
+            vId = window.prompt("Anade un ID para modificar");
+            if (containsLetters(vId)) {
+                alert("EL id solo puede ser un numero");
+            } else {
+                validarIntro();
+                if (validado) {
+                    valor={
+                        name:Sname,
+                        salary:Ssalary
+                    }
+                    options = {
+                        method:'PATCH',
+                        body:JSON.stringify(valor),
+                        headers:{
+                            'Content-type':'application/json'
+                        }
+                    }
+                    fetch(cors+urlFetch+'/'+vId,options)
+                        .then((response) => response.json())
+                        .then((data) =>{
+                            if (JSON.stringify(data)=='{"message":"Employee not found"}'){
+                                alert('El empleado con id '+vId+' no existe')
+                            }
+                        })
+                    }
+            }
+        }
+
+        //Borrar por id
+        function eDel () {
+            vId = window.prompt("Anade un ID para borrar");
+            if (containsLetters(vId)) {
+                alert("EL id solo puede ser un numero");
+            } else {
+                options = {
+                    method:'DELETE',
+                    headers:{
+                        'Content-type':'application/json'
+                    }
+                }
+                fetch(cors+urlFetch+'/'+vId,options)
+                    .then((response) => response.json())
+                    .then((data) =>{
+                        if (JSON.stringify(data)==='{"message":"Employee not found"}'){
+                                alert('El empleado con id '+vId+' no existe')
+                            }
+                    })
+            }
+        }
+
+        //Muestra todos los empleados
+        function showAll(){
+            tabla.innerHTML='<tr id="cabeTable"><td>ID</td><td>NAME</td><td>SALARY</td></tr>';
+            fetch(cors+urlFetch)
+                .then((response) => response.json())
+                .then((data) => {
+                    for (i=0;i<data.length;i++) {
+                        let rowTabla = document.getElementById('tablaG').insertRow(-1);
+                        rowTabla.insertCell(0).innerHTML='<a href="indexRecibidora.html?id='+data[i].id+'" target="_blank">'+data[i].id+'<a/>';
+                        rowTabla.insertCell(1).innerHTML=data[i].name;
+                        rowTabla.insertCell(2).innerHTML=data[i].salary;
+                        
+                    }
+                    })
+        }
+
+        //Muestra empleado por id
+        function showBy () {
+            
+            vId = window.prompt("Anade un ID");
+            if (containsLetters(vId)) {
+                alert("EL id solo puede ser un numero");
+            } else {
+                fetch(cors+urlFetch+'/'+vId)
+                        .then((response) => response.json())
+                        .then((data) =>{
+                            if (JSON.stringify(data)==='{"message":"Employee not found"}'){
+                                alert('El empleado con id '+vId+' no existe')
+                            } else{
+                                tabla.innerHTML='<tr id="cabeTable"><td>ID</td><td>NAME</td><td>SALARY</td></tr>';
+                                let rowTabla = document.getElementById('tablaG').insertRow(-1);
+                                rowTabla.insertCell(0).innerHTML='<a href="indexRecibidora.html?id='+data.id+'" target="_blank">'+data.id+'<a/>';
+                                rowTabla.insertCell(1).innerHTML=data.name;
+                                rowTabla.insertCell(2).innerHTML=data.salary;
+                            }
+                            //Extrae el id del boton generado automaticamente
+                        })
+                        
+                    }
+        }
+
+        //Anade empleado
+        function addProduction(){
+            validado=true;
+            Sname = document.getElementById('Ename').value;
+            Ssalary = document.getElementById('Esalary').value;
+            
+            //Valida el Insert
+            validarIntro();
+
+            if (validado) {
+                valor={
+                    name:Sname,
+                    salary:Ssalary
+                }
+                options = {
+                    method:'POST',
+                    body:JSON.stringify(valor),
+                    headers:{
+                        'Content-type':'application/json'
+                    }
+                }
+                fetch(cors+urlFetch,options)
+                    .then((response) => response.json())
+                    .then((data) =>{})
+                }
+        }
+
+        function newURL() {
+           // const par
+        }
+
+        //Valida el id introducido
+        function validarIntro () {
+            if ((Sname.length<5 || Sname.length>40) || containsNumbers(Sname)) {
+                    validado=false;
+                    alert('ERROR! Only character between 5 - 40');
+                }
+                if (parseInt(Ssalary)<0 || (Ssalary.length<1 || Ssalary.length>5) || containsLetters(Ssalary)) {
+                    validado=false;
+                    alert('ERROR! Only number between 0 - 9999');
+                }
+        }
+
+        //Metodos utilizados para validar
+        function containsNumbers(str) {
+            return /\d/.test(str);
+        }
+        function containsLetters(str) {
+            return /[a-zA-Z]/.test(str);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="index.css" type="Text/Css" rel="stylesheet"/>
+    <title>Document</title>
+</head>
+<body>
+    <div id="contenedor">
+        <div id="encabezado">
+            
+        </div>
+        <div id="tabla">
+            <br>
+            <table id="tablap" class="table table-dark table-striped">
+                <tr id="cabeTable">
+                    <td>ID</td>
+                    <td>NAME</td>
+                    <td>SALARY</td>
+                </tr>
+            </table>
+            <br>
+            <a href="index.html">Volver...</a>
+        </div>
+    </div>
+    <script>
+        const parsedUrl = new URL(window.location.href)
+        const cors ='https://cors-anywhere.herokuapp.com/';
+        var idE = `${parsedUrl.searchParams.get("id")}`;
+        let tabla = document.getElementById('tablap');
+        
+        
+        fetch(cors+'https://nodejs-mysql-restapi-production-d8bd.up.railway.app/api/employees/'+idE)
+                .then((response) => response.json())
+                .then((data) => {
+                    if (data.id!=undefined) {
+                        tabla.innerHTML='<tr id="cabeTable"><td>ID</td><td>NAME</td><td>SALARY</td></tr>';
+                        var rowTabla = document.getElementById('tablap').insertRow(-1);
+                        rowTabla.insertCell(0).innerHTML=data.id;
+                        rowTabla.insertCell(1).innerHTML=data.name;
+                        rowTabla.insertCell(2).innerHTML=data.salary;
+                    }
+                });
+        
+    </script>
+</body>
+</html>

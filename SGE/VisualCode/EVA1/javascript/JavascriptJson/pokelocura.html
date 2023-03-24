@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Pokemon Nombre 
+            <select id="pokemons">
+                <option value="ditto">Ditto</option>
+                <option value="blaziken">Blaziken</option>
+                <option value="gardevoir">Gardevoir</option>
+            </select>
+    <input type="button" id="Eboton" value="GO">
+    <br><h4>Nombre</h4>
+    <div id="nombrePokemon"></div>
+    <h4>Tipo</h4>
+    <div id="tipoPokemon"></div>
+    <h4>Habilidades</h4>
+    <div id="habilidadPokemon"></div>
+    <h4>Stats</h4>
+    <div id="statsPokemon"></div>
+    </label>
+
+    <script>
+
+        document.getElementById('Eboton').addEventListener("click",llamada,false);
+        var bloqueDivs = document.getElementsByTagName('div');
+
+        function llamada() {
+            var pokemon;
+            switch (document.getElementById('pokemons').value) {
+                case 'ditto':
+                fetch('https://pokeapi.co/api/v2/pokemon/ditto')
+                .then((response) => response.json())
+                .then((data) => {console.log(data)
+                    
+                   
+                })
+                break;
+                case 'blaziken':
+                fetch('https://pokeapi.co/api/v2/pokemon/blaziken')
+                .then((response) => response.json())
+                .then((data) => {
+                    bloqueDivs[0].innerHTML = data.name
+                    bloqueDivs[1].innerHTML = data.types[0].type.name+' / '+data.types[1].type.name
+                    bloqueDivs[2].innerHTML = data.abilities[0].ability.name+' / '+data.abilities[1].ability.name
+                    bloqueDivs[3].innerHTML = 'hp: '+data.stats[0].base_stat+' / attack: '+data.stats[1].base_stat+' / defense: '+data.stats[2].base_stat+' / special attack: '+data.stats[3].base_stat+' / special defense: '+data.stats[4].base_stat+' / speed: '+data.stats[5].base_stat
+                  
+                })
+                    break;
+                case 'gardevoir':
+                fetch('https://pokeapi.co/api/v2/pokemon/gardevoir')
+                .then((response) => response.json())
+                .then((data) => {
+                    bloqueDivs[0].innerHTML = data.name
+                    bloqueDivs[1].innerHTML = data.types[0].type.name+' / '+data.types[1].type.name
+                    bloqueDivs[2].innerHTML = data.abilities[0].ability.name+' / '+data.abilities[1].ability.name+' / '+data.abilities[2].ability.name
+                    bloqueDivs[3].innerHTML = 'hp: '+data.stats[0].base_stat+' / attack: '+data.stats[1].base_stat+' / defense: '+data.stats[2].base_stat+' / special attack: '+data.stats[3].base_stat+' / special defense: '+data.stats[4].base_stat+' / speed: '+data.stats[5].base_stat
+                    
+                })
+                break;
+            }
+
+
+        }
+
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+</body>
+
+<script>
+        
+    //Objeto Json 
+    const javier = {
+        "nombre":"javier",
+        "edad":27,
+        "idiomas":["eng","spa","fra","fra"]
+    }
+
+    const materias = {"SGE":2,"FH":1,"MME":1}
+
+    //convertir a texto (Recibe objeto Json, convierte a texto)
+    texto = JSON.stringify(javier);
+
+    //convertir a JSON (Recibe texto Json, convierte a objeto Jason Londoño)
+    parse = JSON.parse(texto)
+
+    console.log(parse);
+    console.log(texto);
+
+    console.log(`Soy ${javier.nombre} y tengo ${javier.edad}`);
+
+    console.log(javier);
+
+    //console.log(javier.idiomas[0]);
+    javier.asignaturas = materias;
+
+    console.log(javier);
+
+
+</script>
+
+
+</html>

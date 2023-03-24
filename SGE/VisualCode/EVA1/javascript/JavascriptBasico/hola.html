@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Archivo de prueba</title>
+</head>
+<body>
+    <script>
+        /*marca=window.prompt("Escribe la marca")
+        marca=="ford" ? modelo=window.prompt("Escribe el modelo") : document.write("No hay descuentos")
+        modelo=="fiesta" ? descuento="El descuento es del 5%" : descuento="No hay descuentos"
+        modelo=="focus" ? descuento="El descuento es del 10%" : descuento="No hay descuentos"
+        document.write(descuento)*/
+        
+        /*dia=window.prompt("Introduce el dia").toLowerCase()
+        switch (dia) {
+            case 'lunes' || 'martes' || 'miercoles' || 'jueves' || 'viernes':
+                document.write("No es fin de semana")
+                break
+            case 'sabado' || 'domingo':
+                document.write("Es fin de semana")
+                break
+        }*/
+        
+        var asignaturas = new Array();
+        asignaturas["notas"]
+        asignaturas["asignatura"]
+
+        media=0
+        for (let i = 0; i < 3; i++) {
+            asignatura=window.prompt("Introduce una asignatura");
+            nota=window.prompt("Introduce una nota")
+            asignaturas[i]={"asignatura":asignatura,"nota":nota}
+
+                /*
+                document.writeln(nota)
+                nota>=9 && nota<=10 ? document.writeln("Sobresaliente") :
+                nota>=7 && nota<=8 ? document.writeln("Notable") :
+                nota>=5 && nota<=7 ? document.writeln("Aprobado") :
+                nota<5 ? document.writeln("Suspenso") :
+                document.writeln("La nota no es valida")
+                */
+                //document.write("<br>")
+
+        }
+
+        //media=parseInt(media)
+        //asignaturas["media"]=media/6;
+        //document.write("La media es: "+ asignaturas["media"])
+        //document.write("<br> Se procede a recorrer el array");
+
+        for (i in asignaturas) {
+            document.writeln("<br>"+asignaturas[i].asignatura+" "+asignaturas[i].nota);
+        }
+
+    </script>
+</body>
+</html>

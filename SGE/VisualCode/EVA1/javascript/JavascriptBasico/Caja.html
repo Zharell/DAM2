@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p id="elp">Introduce tu nombre</p> <input type="text" id="nombre">
+    <input type="button" id="boton" value="Introducir" onclick="llamar()">
+    <select name="colores" id="colores">
+        <option value="rojo">Rojo</option>
+        <option value="verde">Verde</option>
+        <option value="azul">Azul</option>
+    </select>
+    
+
+    <script>
+        //document.getElementById('boton').addEventListener("mouseover",llamar,false)
+        //document.getElementById('boton').addEventListener('blur',llamar,false);
+        document.getElementById('boton').addEventListener('blur',llamar,false);
+        function llamar()
+        {
+           //document.write(document.getElementById('nombre').value)
+           //document.body.style.color = 'red'
+            //document.getElementById('elp').style.color="red";
+            document.getElementById('elp').innerText=document.getElementById('nombre').value
+            var vtexto = document.getElementById('elp').style;
+            switch (document.getElementById('colores').value) 
+            {
+                case "rojo":
+                  vtexto.color='red';
+                break;
+                case "azul":
+                    vtexto.color='blue';
+                break;
+                case "verde":
+                    vtexto.color='green';
+                break;
+            }
+        }
+    </script>
+
+</body>
+</html>

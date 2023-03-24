@@ -1,0 +1,38 @@
+package practica2;
+
+import java.sql.*;
+
+public class Practica2 {
+
+    public static void main(String args[]) throws SQLException {
+        
+        //Realizar la conexion
+        DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+
+        Connection conexion = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "profe", "profe");
+        
+
+        Statement mySt = conexion.createStatement();
+        ResultSet myRs = mySt.executeQuery("select * from emp where deptno=30");
+        
+        //Imprimir en pantalla los resultados
+        while (myRs.next()) {
+            
+            int empno = myRs.getInt("empno");
+            String ename= myRs.getString("ename");
+            String job= myRs.getString("job");
+            int mgr= myRs.getInt("mgr");
+            Date fecha= myRs.getDate("hiredate");
+            int sal= myRs.getInt("sal");
+            int comm= myRs.getInt("comm");
+            int deptno= myRs.getInt("deptno");
+            
+            System.out.println("N.Emp - "  + empno + " Nombre - " + ename + " Trabajo - " + job+ " Boss - "+
+                    mgr+" F.Inicio - "+ fecha+ " Salario - "+sal+" Comision - "+comm+" Departamento - "+deptno);
+        }
+        mySt.close();
+
+    }
+   
+    
+}

@@ -1,0 +1,17 @@
+#contenedor{
+    margin:0 auto;
+    height:1000px;
+    width:800px;
+}
+#encabezado{
+    margin:0;
+    width:500px;
+    margin-top:10px;
+}
+
+#tabla{
+    margin:auto;
+    text-align: center;
+}
+
+

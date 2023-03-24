@@ -1,0 +1,15 @@
+body{
+    width: 1920px;
+    height: 1080px;
+    margin: 0px auto;
+    background-color: #e1efe5;
+   
+}
+.margen{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+a {
+    color: black;
+  }

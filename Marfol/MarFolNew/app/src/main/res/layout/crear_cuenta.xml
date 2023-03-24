@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="login.CrearCuenta"
+    android:orientation="vertical"
+    android:background="@color/app">
+    <ImageView
+        android:id="@+id/btnVolver"
+        android:layout_width="60dp"
+        android:layout_height="64dp"
+        android:padding="10px"
+        android:src="@drawable/btn_volver"/>
+
+    <EditText
+        android:id="@+id/etCorreo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textColor="@color/black"
+        android:textColorHint="@color/letras"
+        android:hint="Correo *"
+        android:inputType="textEmailAddress"
+        android:layout_margin="15dp"/>
+
+    <EditText
+        android:id="@+id/etPassw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textColor="@color/black"
+        android:textColorHint="@color/letras"
+        android:layout_margin="15dp"
+        android:hint="Contraseña *"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/etPassw2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textColor="@color/black"
+        android:textColorHint="@color/letras"
+        android:layout_margin="15dp"
+        android:hint="Repetir contraseña *"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/etCodPostal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textColor="@color/black"
+        android:textColorHint="@color/letras"
+        android:layout_margin="15dp"
+        android:hint="Código postal"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/etFechaNac"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textColor="@color/black"
+        android:textColorHint="@color/letras"
+        android:layout_margin="15dp"
+        android:hint="Fecha de nacimiento"
+        android:inputType="date" />
+
+    <Button
+        android:id="@+id/btnRegistro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginEnd="3dp"
+        android:backgroundTint="@color/botones"
+        android:text="Registro"
+        android:textColor="@color/letras" />
+
+</LinearLayout>

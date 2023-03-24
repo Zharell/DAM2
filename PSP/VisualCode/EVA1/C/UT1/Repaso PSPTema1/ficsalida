@@ -1,0 +1,8 @@
+total 56
+drwxrwxr-x 2 javier javier  4096 nov  6 20:14 .
+drwxrwxr-x 3 javier javier  4096 nov  6 19:57 ..
+-rwxrwxr-x 1 javier javier 19608 nov  6 20:14 execRepaso
+-rw-rw-r-- 1 javier javier   263 nov  6 20:14 execRepaso.c
+-rw-rw-r-- 1 javier javier     0 nov  6 20:14 ficsalida
+-rwxrwxr-x 1 javier javier 19488 nov  6 20:14 systemRepaso
+-rw-rw-r-- 1 javier javier   405 nov  6 20:14 systemRepaso.c

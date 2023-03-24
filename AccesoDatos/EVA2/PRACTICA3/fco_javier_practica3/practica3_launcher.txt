@@ -1,0 +1,165 @@
+package practica3;
+
+import java.util.Scanner;
+
+public class TestConnect {
+  private static JavierProyectoBD Base;
+  
+  //Utilizaremos Scanner para ahorrarnos el uso de otra clase externa
+  public static Scanner sc = new Scanner(System.in);
+  
+  public TestConnect() throws ClassNotFoundException,
+      java.sql.SQLException, InstantiationException,
+      IllegalAccessException {
+      
+    Base = new JavierProyectoBD();
+  }
+  
+  
+  public void insertarAlumnos() throws java.sql.SQLException {
+    String nombre,apellido;
+    int edad;
+    
+    //Obtenemos datos para insertar desde java JavierProyectoBD
+    System.out.print("\nNombre: ");
+    //Ejemplo de Scanner
+    nombre = sc.nextLine();
+    
+    System.out.print("Apellido: ");
+    apellido = sc.nextLine();
+    
+    System.out.print("Edad: ");
+    edad = sc.nextInt();
+    
+    //Accedemos al metodo
+    Base.insertarAlumnos(nombre, apellido, edad);
+    
+  }
+  
+  
+  public void insertarProfesores() throws java.sql.SQLException {
+    String nombre,apellido;
+    int edad;
+    
+    //Obtenemos datos para insertar desde java JavierProyectoBD
+    System.out.print("\nNombre: ");
+    nombre = sc.nextLine();
+    
+    System.out.print("Apellido: ");
+    apellido = sc.nextLine();
+    
+    System.out.print("Edad: ");
+    edad = sc.nextInt();
+    
+    //Accedemos al metodo
+    Base.insertarProfesores(nombre, apellido, edad);
+    
+  }
+  
+  
+  public void borrarAlumno()
+      throws java.sql.SQLException {
+    String nombre;
+    System.out.print("\nNombre para borrar: ");
+    nombre = sc.nextLine();
+    Base.borrarAlumnos(nombre);
+  }
+  
+  
+  public void borrarProfesor()
+      throws java.sql.SQLException {
+    String nombre;
+
+    System.out.print("\nNombre para borrar: ");
+    nombre = sc.nextLine();
+    Base.borrarProfesores(nombre);
+  }
+  
+  
+  public static int menu(String[] opciones, int numOpciones) {
+    int i = 0, opcion = 0;
+    
+    System.out.println("\n____________________________________\n");
+    for (i = 1; i <= numOpciones; ++i) {
+      System.out.print("    " + i + ". " + opciones[i-1] + "\n");
+    }
+    
+    System.out.println("____________________________________\n");
+    
+    do {
+      System.out.print("\nOpci n (1 - " + numOpciones + "): ");
+      opcion = sc.nextInt();
+      sc.nextLine();
+    }
+    
+    while(opcion < 1 || opcion > numOpciones);
+    
+    return opcion;
+  }
+  
+  
+  public static void main(String args[]) {
+    int i = 0, opcion = 0;
+    TestConnect objAp = null;
+    try {
+      objAp = new TestConnect();
+
+      String[] opciones = { "Mostrar datos",
+                            "Insertar en \"Alumnos\"",
+                            "Insertar en \"Profesores\"",
+                            "Borrar en \"Alumnos\"",
+                            "Borrar en \"Profesores\"",
+                            "Salir." };
+      String[] tablas = Base.tablas();
+      
+      do {
+          
+        switch(opcion = objAp.menu(opciones, opciones.length)) {
+          case 1:
+            i = objAp.menu(tablas, tablas.length);
+            Base.mostrarTabla(tablas[i-1]);
+            break;
+          case 2:
+            objAp.insertarAlumnos();
+            break;
+          case 3:
+            objAp.insertarProfesores();
+            break;
+          case 4:
+            objAp.borrarAlumno();
+            break;
+          case 5:
+            objAp.borrarProfesor();
+            break;
+        }
+      }
+      while (opcion != 6);
+    }
+    catch(ClassNotFoundException e) {
+      System.out.println(e.getMessage());  
+    }
+    
+    catch(InstantiationException e) {
+      System.out.print(e.getMessage());
+    }
+    
+    catch(IllegalAccessException e) {
+      System.out.print(e.getMessage());
+    }
+    
+    catch(java.sql.SQLException e) {
+      System.out.print(e.getMessage());
+    }
+    
+    finally {
+      try {
+        Base.cerrarConexion();
+      }
+      
+      catch(java.sql.SQLException ignorada) {
+      }
+    }
+    
+  }
+  
+}

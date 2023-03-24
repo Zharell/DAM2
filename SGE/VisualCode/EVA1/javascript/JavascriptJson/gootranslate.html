@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Translate</title>
+</head>
+<body>
+    <h1>Traductor con Google Translate de Español a varios idiomas</h1>
+    <div id="notraducido">Texto Original</div>
+    <select id="Eidiomas">
+        <option value="es">Castellano</option>
+        <option value="en">Inglés</option>
+        <option value="de">Alemán</option>
+    </select><br>
+    <input style="width:600px;" type="text" id="Etexto"/><br>
+    <input type="button" value="Traducir" id="Etraducir">
+    <input type="button" value="Detectar Idioma" id="Edetectar">
+    <input type="button" value="Automático a Castellano" id="Eautomatico"><br>
+    <div id="traducido">Texto traducido</div>
+    <select id="Sidiomas">
+        <option value="es">Castellano</option>
+        <option value="en">Inglés</option>
+        <option value="de">Alemán</option>
+    </select><br>
+    <input style="width:600px;" type="text" id="Stexto"/></label><br>
+
+
+
+    <script>
+        //Api Google
+        const encodedParams = new URLSearchParams();
+
+            const options = {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/x-www-form-urlencoded',
+                    'Accept-Encoding': 'application/gzip',
+                    'X-RapidAPI-Key': 'cdc12ff9e0mshf9611ecbdec7accp17cdbdjsnfa85247b2cf2',
+                    'X-RapidAPI-Host': 'google-translate1.p.rapidapi.com'
+                },
+                body: encodedParams
+            };
+        
+        
+        //Codigo
+        document.getElementById('Etraducir').addEventListener("click",traduccion,false);
+        document.getElementById('Edetectar').addEventListener("click",detectar,false);
+        document.getElementById('Eautomatico').addEventListener("click",Sautomatico,false);
+
+        function traduccion() {
+            var idiomaOriginal = document.getElementById('Eidiomas').value;
+            var idiomaTraducido = document.getElementById('Sidiomas').value;
+            var textoAtraducir = document.getElementById('Etexto').value;
+            encodedParams.append("source", idiomaOriginal);
+            encodedParams.append("target", idiomaTraducido);
+            encodedParams.append("q",textoAtraducir);
+
+            fetch('https://google-translate1.p.rapidapi.com/language/translate/v2', options)
+                .then(response => response.json())
+                .then(response => document.getElementById('Stexto').value = response.data.translations[0].translatedText);
+
+        }
+
+        function detectar() {
+            const encodedParams = new URLSearchParams();
+            encodedParams.append("q", "English is hard, but detectably so");
+
+            fetch('https://google-translate1.p.rapidapi.com/language/translate/v2/detect', options)
+                .then(response => response.json())
+                .then(response => console.log(response));
+        }
+            
+        function Sautomatico() {
+            var idiomaOriginal = document.getElementById('Eidiomas').value;
+            var textoAtraducir = document.getElementById('Etexto').value;
+            encodedParams.append("source", idiomaOriginal);
+            encodedParams.append("target", "es");
+            encodedParams.append("q",textoAtraducir);
+
+            fetch('https://google-translate1.p.rapidapi.com/language/translate/v2', options)
+                .then(response => response.json())
+                .then(response => document.getElementById('Stexto').value = response.data.translations[0].translatedText);
+        }
+
+    </script>
+</body>
+</html>

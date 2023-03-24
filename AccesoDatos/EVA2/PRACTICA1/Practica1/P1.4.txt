@@ -1,0 +1,71 @@
+package practica1;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.Date;
+
+
+public class Practica1 {
+    
+    public static final int newSalary = 18000;
+    
+    public static void main(String[] args) {
+        
+        try {
+            
+            //Se carga el driver para su uso y se realiza la conexion
+            Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
+            String url = "jdbc:mysql://localhost:3306/prueba?serverTimezone=UTC";
+            Connection conn = DriverManager.getConnection(url,"root","");
+            
+            //Obtencion del Statement
+            Statement mySt = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,
+                    ResultSet.CONCUR_UPDATABLE);
+            
+            //Ejecutamos una consulta a la base
+            String consulta = "SELECT * FROM vendedores";
+            ResultSet myRs = mySt.executeQuery(consulta);
+            
+            //Recorremos el resultado
+            while (myRs.next()) {
+                int id = myRs.getInt("id");
+                String nombre = myRs.getString("nombre");
+                Date fecha = myRs.getDate("fecha_ingreso");
+                float sal = myRs.getFloat("salario");
+                System.out.printf("%d %s %s %0,1f \n",id,nombre,fecha,sal);
+            }
+            
+            
+            System.out.println("Se procede a borrar");
+            
+            //Eliminar trupla
+            myRs.absolute(3);
+            myRs.deleteRow();
+            
+            //Se debe recargar la select para obtener nuevos resultados
+            consulta = "SELECT * FROM vendedores";
+            myRs = mySt.executeQuery(consulta);
+            
+            while (myRs.next()) {
+                int id = myRs.getInt("id");
+                String nombre = myRs.getString("nombre");
+                Date fecha = myRs.getDate("fecha_ingreso");
+                float sal = myRs.getFloat("salario");
+                System.out.printf("%d %s %s %0,1f \n",id,nombre,fecha,sal);
+            }
+            
+            mySt.close();
+            conn.close();
+        } catch (SQLException x) {
+            x.printStackTrace();
+        }
+        catch (Exception f) {
+            f.printStackTrace();
+        }
+        
+    }
+    
+}

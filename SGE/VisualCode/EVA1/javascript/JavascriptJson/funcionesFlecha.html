@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="Enombre" placeholder="Nombre Manín">
+    <input type="text" id="Eedad" placeholder="Edad klk">
+    <input type="text" id="Eequipo" placeholder="Ta piola"><br>
+
+    <input id="nombresito" type="button" value="Nombresito">
+    <input id="edad" type="button" value="Edad en 2030">
+    <input id="equipo" type="button" value="Tu equipaso">
+
+
+    <script>
+
+        document.getElementById('nombresito').addEventListener("click",()=>alert("Hola "+document.getElementById('Enombre').value),false);
+        document.getElementById('edad').addEventListener("click",()=>alert("Tu edad "+(parseInt(document.getElementById('Eedad').value)+8).toString()),false);
+        document.getElementById('equipo').addEventListener("click",()=>alert(document.getElementById('Eequipo').value),false);
+
+
+    </script>
+
+
+
+</body>
+</html>

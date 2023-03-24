@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        nombre = window.prompt("Introduce tu nombre")
+        Apellido = window.prompt("Introduce tu apellido")
+        edad = window.prompt("Introduce tu edad")
+
+        let listaNotas = new Array()
+        listaNotas["asignatura"]
+        listaNotas["nota"]
+
+        for (var i=0;i<2;i++) {
+            asig = window.prompt("Introduce asignatura")
+            not = window.prompt("Introduce nota")
+            listaNotas[i]={"asignatura":asig,"nota":not}
+        }
+e
+        const alumno = {
+            name:nombre,
+            apellido:Apellido,
+            edad:edad,
+            notas:listaNotas
+        }
+        
+           document.writeln("Nombre "+alumno.name+
+                            "<br> Apellido "+alumno.apellido+
+                            "<br> edad "+alumno.edad+
+                            "<br> "+alumno.notas
+        )
+        
+
+
+    </script>
+
+</body>
+</html>

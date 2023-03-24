@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+    <script>
+
+        const persona = {
+            "nombre":window.prompt("Introduce tu nombre"),
+            "edad":parseInt(window.prompt("Introduce tu edad")),
+            "sexo":window.prompt("masculino - femenino"),
+            "direccion":[
+                window.prompt("Introduce la comunidad"),
+                window.prompt("Introduce la ciudad"),
+                window.prompt("Puerta"),
+                parseInt(window.prompt("Código Postal"))
+            ],
+            "telefono":927302837,
+            "asignaturas":[
+                {"nombre":"SGE",
+                "horas":200
+                },
+                {"nombre":"Programación",
+                "horas":240
+                }
+            ],
+            "coche":false,
+            "centros":[
+                {
+                    "nombre":"Juan de la Cierva",
+                    "bilingue":true,
+                    "localidad":"Madrid"
+                },
+                {
+                    "nombre":"Cepa Oporto",
+                    "bilingue":false,
+                    "localidad":"Madrid"
+                } 
+            ]  
+        }
+
+        const amigos = [
+            {
+                "nombre":"Eduardo",
+                "edad":25,
+                "equipoFutbol":"Los Máquinas",
+                "telefono":928499647,
+                "estudios":{
+                    "familiaProfesional":"Electrónica",
+                    "nivel":"medio",
+                    "lugar":"Madrid"
+                }
+            },
+            {
+                "nombre":"Pepito",
+                "edad":22,
+                "equipoFutbol":"Los Birras",
+                "telefono":928882647,
+                "estudios":{
+                    "familiaProfesional":"Informática",
+                    "nivel":"medio",
+                    "lugar":"Madrid"
+                }
+            },
+            {
+                "nombre":"Alberto",
+                "edad":31,
+                "equipoFutbol":"Los Máquinas",
+                "telefono":928433647,
+                "estudios":{
+                    "familiaProfesional":"Jardinería",
+                    "nivel":"medio",
+                    "lugar":"Madrid"
+                }
+            }
+        ]
+        var cantAsig = parseInt(window.prompt("Cuantás asignaturas va a añadir"));
+        for (i=0;i<cantAsig;i++) {
+
+            persona.asignaturas.push({"nombre":window.prompt("Nombre de la Asignatura"),"horas":parseInt(window.prompt("Horas de la asignatura"))})
+
+        };
+
+        persona.amigos=amigos;
+        
+        persona.amigos.pop(2);
+
+        //console.log(persona.amigos);
+        
+        //console.log(persona);
+        
+        console.log(persona.asignaturas);
+
+    </script>
+
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser</title>
+</head>
+<body>
+        <label>x<input type="text" id="x" name="coordenadas"></label><br><br>
+        <label>y<input type="text" id="y" name="coordenadas"></label><br><br>
+        <label><input type="radio" id="resize" name="coord">Resize to</label><br><br>
+        <label><input type="radio" id="resize2" name="coord">ResizeBy</label><br><br>
+        <label></label><input type="radio" id="move" name="coord">MoveTo</label><br><br>
+        <label></label><input type="radio" id="move2" name="coord">MoveBy</label><br><br>
+        <input type="button" id="elBoton" value="GO!">
+
+    <script>
+        
+        document.getElementById('elBoton').addEventListener("click",accion,false);
+        function accion() {
+            var TextX = document.getElementById('x').value
+            var TextY = document.getElementById('y').value
+            myWindow = window.open("", "myWindow", "width=200,height=100"); 
+            
+            if (document.getElementById('move').checked) {
+                myWindow.moveTo(TextX,TextY);
+            }
+            if (document.getElementById('move2').checked) {
+                myWindow.moveBy(TextX,TextY);
+            }
+            if (document.getElementById('resize').checked) {
+                myWindow.resizeTo(TextX,TextY);
+            }
+            if (document.getElementById('resize2').checked) {
+                myWindow.resizeBy(TextX,TextY);
+            }
+        }
+
+    </script>
+
+
+</body>
+</html>

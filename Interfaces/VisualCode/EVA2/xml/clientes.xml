@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<clientes>
+   <cliente id="1">
+        <nombre>Ziqiang</nombre>
+        <apellidos>Chen</apellidos>
+        <telefono>111111</telefono>
+   </cliente>
+   <cliente id="2">
+        <nombre>Kaylord</nombre>
+        <apellidos>Macaquinio</apellidos>
+        <telefono>22222222</telefono>
+   </cliente>
+   <cliente id="3">
+        <nombre>Sergio</nombre>
+        <apellidos>Tapia</apellidos>
+        <telefono>33333333333</telefono>
+   </cliente> 
+</clientes>

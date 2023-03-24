@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Selección de imagen</h1>
+    <input type="button" value="Selecciona tu mascota" id="Boton" onclick="botonAnimal()"><br>
+    <input type="radio" id="perro" name="kl"><label>perro</label><br>
+    <input type="radio" id="gato" name="kl"><label>gato</label><br>
+    <input type="radio" id="loro" name="kl"><label>loro</label>
+
+
+    <h1>Borrar</h1>
+    <input type="button" value="Borrar" id ="botonBorrado" onclick="borrado()"><br>
+
+    <script>
+        var borrador=[];
+
+        function botonAnimal() 
+        {
+            const img = document.createElement('img');
+            var perro = document.getElementById('perro').checked;
+            var gato = document.getElementById('gato').checked;
+            var loro = document.getElementById('loro').checked;
+            perro ? img.src = 'https://img.freepik.com/foto-gratis/labrador-retriever_95678-27.jpg?w=2000' : gato ? img.src =
+            'https://www.tiendanimal.es/articulos/wp-content/uploads/2018/01/que-necesita-un-gato.jpg' : loro = img.src =
+            loro ? img.src = 'https://media.istockphoto.com/photos/greenwinged-macaw-ara-chloropterus-in-front-of-white-background-picture-id168663169?k=20&m=168663169&s=612x612&w=0&h=jeogQLjHja0JYgcZpF6w7GHSt6d-_9gi9XLKht4V5yw=' : img.src='';
+            borrador.push(document.body.appendChild(img));
+
+        }
+
+        function borrado()
+        {
+           document.body.removeChild(borrador.pop());
+        }
+
+
+
+
+    </script>
+
+
+    
+</body>
+</html>

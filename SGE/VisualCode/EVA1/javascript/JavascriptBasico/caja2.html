@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="elP">Introduce un nombre</p>
+    <input type="text" id="nombre"><input type="button" id="boton" value="Introducir" onclick="llamada()"><br>
+    <input type="checkbox" id="negrita" name="negrita" value="negrita">
+        <label for="negrita">Negrita</label><br>
+    <input type="checkbox" id="cursiva" name="cursiva" value="cursiva">
+        <label for="cursiva">Cursiva</label><br>
+    <input type="checkbox" id="tachado" name="tachado" value="tachado">
+        <label for="tachado">Tachado</label><br>
+
+    <script>
+
+        
+
+        function llamada()
+        {
+
+            document.getElementById('elP').innerHTML=document.getElementById('nombre').value;
+            var checkneg = document.getElementById('negrita').checked
+            var checkcur = document.getElementById('cursiva').checked
+            var checktach = document.getElementById('tachado').checked
+            var estilos = document.getElementById('elP').style
+            checkneg ? estilos.fontWeight='bold' : estilos.fontWeight='normal';
+            checkcur ? estilos.fontStyle='italic' : estilos.fontStyle='normal';
+            checktach ? estilos.textDecoration='line-through': estilos.textDecoration='none';
+            
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Añadir listas</title>
+</head>
+<body>
+    <p>Introduce tu texto</p>
+    <input type="text" id="añadirTexto">
+    <div id="lista"></div>
+    <br>
+    <input type="radio" name="eleccion" id="añadirPrimero">Añadir Primero</input>
+    <input type="radio" name="eleccion" id="AñadirFinal">Añadir Final</input>
+    <input type="radio" name="eleccion" id="removerPrimero">Remover Primero</input>
+    <input type="radio" name="eleccion" id="removerFinal">Remover final</input>
+    <input type="radio" name="eleccion" id="remplazarPrimero">Remplazar Primero</input>
+    <input type="radio" name="eleccion" id="remplazarFinal">Remplazar final</input>
+
+    <br><br><input type="button" id="botonazo" value="Introduce">
+
+    <script>
+        
+        document.getElementById('botonazo').addEventListener('click',llamada,false);
+        const lista = document.getElementById("lista");
+
+        function llamada() {
+            var ul = document.createElement("ul");
+            var li = document.createElement("li");
+            var nodo = document.createTextNode(document.getElementById('añadirTexto').value)
+            ul.appendChild(li);
+            li.appendChild(nodo); 
+
+            switch (document.querySelector('input[name="eleccion"]:checked').id) {
+                case "añadirPrimero":
+                    anadirPrimero(lista,ul)
+                break;
+                case "AñadirFinal":
+                    ul.appendChild(li);
+                    li.appendChild(nodo);
+                    lista.appendChild(ul);
+                break;
+                case "removerPrimero":
+                    lista.removeChild(lista.firstChild)
+                break;
+                case "removerFinal":
+                    lista.removeChild(lista.lastChild)
+                break;
+                case "remplazarPrimero":
+                    ul.appendChild(li);
+                    li.appendChild(nodo);
+                    lista.replaceChild(ul,lista.firstChild)
+                break;
+                case "remplazarFinal":
+                    ul.appendChild(li);
+                    li.appendChild(nodo);
+                    lista.replaceChild(ul,lista.lastChild)
+                break;
+            }
+        }
+
+        function anadirPrimero (lista,ul) {
+            lista.insertBefore(ul,lista.firstChild)
+        }
+
+    </script>
+
+</body>
+</html>

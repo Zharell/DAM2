@@ -1,0 +1,33 @@
+{
+    "nombre":"javier",
+    "edad":26,
+    "sexo":"masculino",
+    "direccion":[
+        "Caoba",
+        "Madrid",
+        "Derecha",
+        "28030"
+    ],
+    "telefono":927302837,
+    "asignaturas":{
+        "DAM2":[
+            {"nombre":"SGE",
+            "horas":200},
+            {"nombre":"Programacion",
+            "horas":230}
+        ]
+    },
+    "coche":false,
+    "centros":{
+        "Madrid":[
+            {"Nombre":"Juan de la Cierva",
+            "Bilingue":true},
+            {"Nombre":"Cepa Oporto",
+            "Bilingue":false}
+        ],
+        "Barcelona":[
+            {"Nombre":"Instituto inventado",
+            "Bilingue":false}
+        ]
+    }
+}

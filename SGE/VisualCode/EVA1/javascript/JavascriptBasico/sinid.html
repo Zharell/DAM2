@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="P0">Introduce tu nombre</p>
+        <input type="text">
+        <div class="error"></div>
+    <p id="P1">Introduce tu Apellido</p>
+        <input type="text">
+        <div class="error"></div>
+    <p id="P2">Introduce tu Edad</p>
+        <input type="text">
+        <div class="error"></div>
+    <p id="P3">Introduce tu Contraseña</p>
+        <input type="text">
+        <div class="error"></div><br>
+    <br><input type="button" id="boton" value="Saludar">
+
+
+    <script>
+
+        document.getElementById("boton").addEventListener("click",Inserccion,false);        
+
+        function Inserccion()
+        {
+            
+            var fallo = document.getElementsByTagName('div');
+            for (i=0;i<document.getElementsByTagName("P").length;i++) {
+                if (document.getElementsByTagName("input")[i].value) {
+                    document.getElementById("P"+i.toString()).innerHTML = document.getElementsByTagName("input")[i].value
+                    if (fallo[i].innerHTML='VACIO') fallo[i].innerHTML='';
+                } else {
+                    fallo[i].innerHTML='VACIO';
+                    fallo[i].style.color='red';
+                   
+                }
+            }
+
+
+            
+        }
+
+    </script>
+
+</body>
+</html>

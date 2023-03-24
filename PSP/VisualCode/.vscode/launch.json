@@ -1,0 +1,422 @@
+{
+    // Use IntelliSense para saber los atributos posibles.
+    // Mantenga el puntero para ver las descripciones de los existentes atributos.
+    // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Ejercicio2",
+            "request": "launch",
+            "mainClass": "ExamenPSP.Ejercicio2.ejercicio2.src.main.java.com.example.Ejercicio2",
+            "projectName": "ejercicio2"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio2",
+            "request": "launch",
+            "args": [
+                "C:\\Users\\Javier\\Documents\\Librerías\\Credenciales\\mensajes.txt",
+                "C:\\Users\\Javier\\Documents\\Librerías\\Credenciales\\dirs.txt",
+                "10",
+                "Francisco.lopez82",
+                "inventada123"
+            ],
+            "mainClass": "ExamenPSP.Ejercicio2.Ejercicio2",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch enviaCuadrados",
+            "request": "launch",
+            "args": [
+                "8888",
+                "8889"
+            ],
+            "mainClass": "ExamenPSP.UDPEnviaCuadrados.enviaCuadrados",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch ServerBroadCast",
+            "request": "launch",
+            "mainClass": "RepasoFinalFINAL.ut3Comunicaciones.UDPBroad.ServerBroadCast",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch BuilderProcess",
+            "request": "launch",
+            "mainClass": "EVA1.Java.RepasoFinal.BuilderProcess",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch UtilizaC",
+            "request": "launch",
+            "mainClass": "EVA1.Java.RepasoFinal.Java.UtilizaC",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejemplo1",
+            "request": "launch",
+            "mainClass": "EVA1.Java.Tema1.Ejemplo1",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejemplo2",
+            "request": "launch",
+            "mainClass": "EVA1.Java.Tema1.Ejemplo2",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejemplo2Error",
+            "request": "launch",
+            "mainClass": "EVA1.Java.Tema1.Ejemplo2Error",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejemplo3",
+            "request": "launch",
+            "mainClass": "EVA1.Java.Tema1.Ejemplo3",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejemplo4",
+            "request": "launch",
+            "mainClass": "EVA1.Java.Tema1.Ejemplo4",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejemplo5",
+            "request": "launch",
+            "mainClass": "EVA1.Java.Tema1.Ejemplo5",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch EjemploLectura",
+            "request": "launch",
+            "mainClass": "EVA1.Java.Tema1.EjemploLectura",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch ListarAdaptadores",
+            "request": "launch",
+            "mainClass": "EVA1.Java.Tema1.ListarAdaptadores",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch GUI",
+            "request": "launch",
+            "mainClass": "EVA1.Java.Tema2.GUI",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch Hilo",
+            "request": "launch",
+            "mainClass": "EVA1.Java.Tema2.Hilo",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch HiloHijo",
+            "request": "launch",
+            "mainClass": "EVA1.Java.Tema2.HiloHijo",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch HiloSimple",
+            "request": "launch",
+            "mainClass": "EVA1.Java.Tema2.HiloSimple",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch Reloje",
+            "request": "launch",
+            "mainClass": "EVA1.Java.Tema2.Reloje",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch Controladora",
+            "request": "launch",
+            "mainClass": "EVA1.Java.Tema2Syncro.Controladora",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch WaitNotifyTest",
+            "request": "launch",
+            "mainClass": "EVA1.Java.Tema2Syncro2.WaitNotifyTest",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch javararo",
+            "request": "launch",
+            "mainClass": "EVA1.Java.repasoFinalJava.javararo",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch AhorcadoServerTCP",
+            "request": "launch",
+            "mainClass": "EVA2.java.Ahorcado.AhorcadoServerTCP",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch ClienteAhorcado",
+            "request": "launch",
+            "mainClass": "EVA2.java.Ahorcado.ClienteAhorcado",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch Cifrador",
+            "request": "launch",
+            "mainClass": "EVA2.java.CifradoProgramas.Cifrador",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch HolaSocket",
+            "request": "launch",
+            "mainClass": "EVA2.java.Comunicaciones.HolaSocket",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch Parametros",
+            "request": "launch",
+            "mainClass": "EVA2.java.Comunicaciones.Parametros",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch Sender",
+            "request": "launch",
+            "mainClass": "EVA2.java.Comunicaciones.Sender",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch ServerSocketExample",
+            "request": "launch",
+            "mainClass": "EVA2.java.Comunicaciones.ServerSocketExample",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch ServidorJorge",
+            "request": "launch",
+            "mainClass": "EVA2.java.Comunicaciones.ServidorJorge",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch holaCliente",
+            "request": "launch",
+            "mainClass": "EVA2.java.Comunicaciones.holaCliente",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch Cliente",
+            "request": "launch",
+            "mainClass": "EVA2.java.ComunicacionesThreads.Cliente",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch Server",
+            "request": "launch",
+            "mainClass": "EVA2.java.ComunicacionesThreads.Server",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch ObserverDemo",
+            "request": "launch",
+            "mainClass": "EVA2.java.EventSource.ObserverDemo",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "EVA2.java.SSLSocket.App",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch ClienteBroadCast",
+            "request": "launch",
+            "mainClass": "EVA2.java.UDP.BroadCast.ClienteBroadCast",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch ChatUDPServer",
+            "request": "launch",
+            "mainClass": "EVA2.java.UDP.ChatUDP.ChatUDPServer",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch ChatUDPServerBroad",
+            "request": "launch",
+            "mainClass": "EVA2.java.UDP.ChatUDP.ChatUDPServerBroad",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch ClienteUdp",
+            "request": "launch",
+            "mainClass": "EVA2.java.UDP.ClienteUdp",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch MultiCastSend",
+            "request": "launch",
+            "mainClass": "EVA2.java.UDP.MultiCasta.MultiCastSend",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch ServerUdp",
+            "request": "launch",
+            "mainClass": "EVA2.java.UDP.ServerUdp",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch ClienteGenerador",
+            "request": "launch",
+            "mainClass": "RepasoFinalFINAL.OpcionalesGit.Comunicacion1.ClienteGenerador",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch ServerGenerador",
+            "request": "launch",
+            "mainClass": "RepasoFinalFINAL.OpcionalesGit.Comunicacion1.ServerGenerador",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch ClienteGeneradorUDP",
+            "request": "launch",
+            "mainClass": "RepasoFinalFINAL.OpcionalesGit.Comunicacion2.ClienteGeneradorUDP",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch ServerGeneradorUDP",
+            "request": "launch",
+            "mainClass": "RepasoFinalFINAL.OpcionalesGit.Comunicacion2.FormaClasicaDificil.ServerGeneradorUDP",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch ServerGeneradorUDPnew",
+            "request": "launch",
+            "mainClass": "RepasoFinalFINAL.OpcionalesGit.Comunicacion2.ServerGeneradorUDPnew",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch enviaCuadrados",
+            "request": "launch",
+            "mainClass": "RepasoFinalFINAL.OpcionalesGit.CorreoCuadrado.demo.src.main.java.com.enviaCuadrados",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch httpserver",
+            "request": "launch",
+            "mainClass": "RepasoFinalFINAL.OpcionalesGit.HttpServer.httpserver",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch generadorHashMap",
+            "request": "launch",
+            "mainClass": "RepasoFinalFINAL.OpcionalesGit.Seguridad1.generadorHashMap",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch ExtraerCokie",
+            "request": "launch",
+            "mainClass": "RepasoFinalFINAL.OpcionalesGit.Seguridad2.ExtraerCokie",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch CambiarDNS",
+            "request": "launch",
+            "mainClass": "RepasoFinalFINAL.ut3Comunicaciones.Servicios.Http.CambiarDNS",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch ClienteChat",
+            "request": "launch",
+            "mainClass": "RepasoFinalFINAL.ut3Comunicaciones.TCP.Server1a1.ClienteChat",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch ServidorChat",
+            "request": "launch",
+            "mainClass": "RepasoFinalFINAL.ut3Comunicaciones.TCP.Server1a1.ServidorChat",
+            "projectName": "VisualCode_1e4b68ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch enviaCuadrados(1)",
+            "request": "launch",
+            "args": [
+                "15",
+                "15",
+                "francisco.lopez82@educa.madrid.org"
+            ],
+            "mainClass": "com.enviaCuadrados",
+            "projectName": "demo"
+        },
+        {
+            "type": "java",
+            "name": "Launch AppTest",
+            "request": "launch",
+            "mainClass": "ejemplo.AppTest",
+            "projectName": "ejemplo"
+        },
+        {
+            "type": "java",
+            "name": "Launch App(1)",
+            "request": "launch",
+            "mainClass": "javaemail.App",
+            "projectName": "javaemail"
+        }
+    ]
+}
